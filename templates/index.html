@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />   
+    <style>
+      [class*="col"] {
+        padding: 1rem;
+        background-color: #33b5e5;
+        border: 2px solid #fff;
+        color: #fff;
+      }
+      .child{
+        background-color: #2041d3;
+      }
+
+    </style> 
+  </head>
+  <body>
+<div class="container border">
+      
+        <h2 div class="col">TMT Analysis Tool</div>
+        
+        
+      
+     
+	<p2>Lauren Orr, 2022, Nomura Research Group</p2>
+
+    </div>
+    <h2>Select file to upload</h2>
+	<p>
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+		  	 <li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+	 	 {% endif %}
+		{% endwith %}
+	</p>
+	<form method="post" action="/" enctype="multipart/form-data">
+   	 <dl>
+			<p>
+				<input type="file" name="file" autocomplete="off" required>
+			</p>
+   	 </dl>
+ 	   <p>
+			<input type="submit" value="Submit">
+		</p>
+	</form>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
+

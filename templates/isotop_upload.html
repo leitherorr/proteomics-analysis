@@ -1,0 +1,231 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TMT Analysis Tool</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />   
+    <!--delete below this to /script-->
+    
+    <!-- end delete-->
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <style>
+      [class*="col"] {
+        padding: ;
+        background-color: #3F76F0;
+	
+        border: 2px solid #fff;
+        color: #fff;
+      }
+      .child{
+        background-color: #2041d3;
+      }
+
+      
+
+
+    </style> 
+    
+<style></style>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(() => {
+  $('submit').on('click', e => {
+    let spinner = $(e.currentTarget).find('span')
+    spinner.removeClass('d-none')
+    setTimeout(_ => spinner.addClass('d-none'), 2000)
+  })
+})
+      </script>
+      
+<!--paste below-->
+
+
+
+
+
+
+<!--paste above-->
+  </head>
+
+  <body>
+
+  
+
+  
+
+
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script> 
+
+
+
+    
+
+
+
+<h1 class="text-primary text-center">isoTOP-ABPP Proteomics Data Analysis Tool </h1>
+
+
+
+<p class="text-black-50 text-center"><I> Analyze IP2 isoTOP-ABPP output to find enriched proteins  </I></p>
+
+</div> </div>
+<div class="container border">
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <br>
+        </div>
+      </div>
+    <br>
+
+ 
+
+
+<div class="d-flex justify-content-center text-black">
+<span class="border border-5 border-light rounded bg-light">
+
+  <div class="text-wrap ms-2 me-1" style="width: 28rem;">
+    <p>Before you begin, please download your IP2 output file as excel (".csv") and use the
+         <a href="https://peptide-script.herokuapp.com/">peptide-script web app</a> 
+        to obtain a ".tsv" file.  Save it with a descriptive name, then upload it here. </p> </div>
+
+<p class="ms-5"><b>Select file to upload
+</b></p2>
+
+	<!--/div-->
+
+
+<!--div class="d-flex justify-content-center"-->
+
+
+
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+		  	 <li class="ms-5">{{ message }}</li>
+			{% endfor %}
+			</ul>
+	 	 {% endif %}
+		{% endwith %}
+	</p>
+	<form method="post" action="/isotop" enctype="multipart/form-data">
+   	 <dl>
+			<p>
+
+
+<!--div class="mb-3"-->
+<!--input type="file" class="form-control" id="customFile" /-->
+
+
+
+<!--input type="file" input class="btn btn-info" name="file" autocomplete="off" required-->
+
+<input type="file" class="ms-5 me-5" name="file_isotop" autocomplete="off" required>
+
+
+			</p>
+   	 </dl>
+ 	   <p>
+			
+<button type="submit" class="btn btn-info ms-5 text-background-color">Submit</button>
+
+<!--input type="submit" value="Submit".        btn-outline-background-color-->
+		</p>
+
+
+
+</span>
+
+</div>
+
+
+
+<br>
+<div class="text-center">
+  <!--div class="spinner-border text-info" role="status"-->
+    <!span class="sr-only"></span>
+  </div>
+</div>
+
+	</div>
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+  </body>
+<br>
+
+
+
+<div class="container">
+  <!--div class="row"-->
+ <div class="col bg-white"><img src="data:image/jpeg;base64,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" class="rounded mx-auto d-block" alt="Responsive image" /></div>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+<footer class='footer'>
+  
+	<div class='container is-fluid'>
+		<div class='row'><p class="text-black-50 text-left">
+      
+
+			Created by Lauren Orr for <a href='http://nomuraresearchgroup.com'>Nomura Research Group</a>, 2022
+</p>
+
+<p class="text-end">
+      
+
+  <a href='/'>Return to home</a>
+</p>
+
+
+		</div>
+   
+	</div>
+</footer>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
